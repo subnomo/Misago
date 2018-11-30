@@ -115,7 +115,7 @@ def create_default_roles(apps, schema_editor):
 
             # attachments
             'misago.threads.permissions.attachments': {
-                'max_attachment_size': 8 * 1024,
+                'max_attachment_size': 12 * 1024,
                 'can_download_other_users_attachments': True,
                 'can_delete_other_users_attachments': True,
             },
