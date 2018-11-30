@@ -8,7 +8,9 @@ from misago.users.tokens import make_activation_token
 
 
 def send_welcome_email(request, user):
-    mail_subject = _("Welcome on %(forum_name)s forums!")
+    forums = '' if 'forums' in settings.forum_name.lower() else ' forums'
+
+    mail_subject = _("Welcome to %(forum_name)s{}!".format(forums))
     mail_subject = mail_subject % {'forum_name': settings.forum_name}
 
     if not user.requires_activation:
